@@ -255,9 +255,9 @@ import os
 
 # create sub directory
 
-os.mkdir("/data", mode=0o777)
+os.mkdir("/data123", mode=0o777)
 # create file
-fileRef = open("/data/users.csv", mode="w")
+fileRef = open("/data123/users.csv", mode="w")
 
 for _ in users:
     for (key, value) in _.items():
