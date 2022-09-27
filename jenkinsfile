@@ -5,7 +5,7 @@ pipeline{
     maven 'maven'
   }
   stages{
-        stage('build'){
+        stage('js build'){
                       steps{
                           script{
                                  try{
@@ -13,7 +13,7 @@ pipeline{
                                       sh "node app.js"
                                  }
                                  catch(all){
-                                      echo "Test stage Failed"
+                                      echo "js stage Failed"
                                       
                                       exit 1
                                  }
@@ -21,7 +21,21 @@ pipeline{
                      }
         }
 
-        
+        stage('python build'){
+                      steps{
+                          script{
+                                 try{
+                                      
+                                      sh "python main.py"
+                                 }
+                                 catch(all){
+                                      echo "Python stage Failed"
+                                      
+                                      exit 1
+                                 }
+                          }
+                     }
+        }
         
   }      
 }
