@@ -249,15 +249,15 @@ users = [
     }
 ]
 
-basePath = "F:/Python_Virtusa/Day1"
+#basePath = "./"
 
 import os
 
 # create sub directory
 
-os.mkdir(basePath + "/data", mode=0o777)
+os.mkdir("/data", mode=0o777)
 # create file
-fileRef = open(basePath + "/data/users.csv", mode="w")
+fileRef = open("/data/users.csv", mode="w")
 
 for _ in users:
     for (key, value) in _.items():
